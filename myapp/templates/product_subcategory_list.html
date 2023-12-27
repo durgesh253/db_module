@@ -1,0 +1,26 @@
+<!-- Modify your existing HTML code to include Tailwind CSS classes -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Subcategory List</title>
+    <!-- Add Tailwind CSS stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-4">
+    <h2 class="text-2xl font-bold mb-4">Product Subcategory List</h2>
+    <ul>
+        {% for product_subcategory in product_subcategories %}
+            <li class="mb-2">
+                {{ product_subcategory.product.product_name }} - {{ product_subcategory.product_model }}
+                <a href="{% url 'update_product_subcategory' product_subcategory.id %}" class="ml-2 text-blue-500">Edit</a>
+                <a href="{% url 'delete_product_subcategory' product_subcategory.id %}" class="ml-2 text-red-500 hover:underline">Delete</a>
+
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_product_subcategory' %}" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white">Add Product Subcategory</a>
+</body>
+</html>
