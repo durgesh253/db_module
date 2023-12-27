@@ -1,0 +1,6 @@
+6) Mention what command line can be used to load data into Django?
+
+ => Django provides a management command called loaddata that is used
+ to load data from fixture files into your database. Fixture files 
+ are serialized representations of database objects, and they
+  typically have a .json, .yaml, or .xml fil
